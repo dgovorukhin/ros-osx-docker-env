@@ -1,0 +1,12 @@
+version: "3.7"
+
+services:
+  ros:
+    image: ${IMAGE}
+    command: sleep infinity
+    container_name: ${CONTAINER_NAME}
+    volumes:
+      - ${WORK_DIR_HOST}:${WORK_DIR_INSIDE_DOCKER}
+      - /tmp/.X11-unix:/tmp/.X11-unix
+    environment:
+      - DISPLAY=${HOSTNAME}:0
